@@ -42,6 +42,9 @@ public class ArticleDetailFragment extends Fragment implements
     private ImageView mPhotoView;
     private CollapsingToolbarLayout mCollapsingToolbar;
     private Toolbar toolbar;
+    private String title = null;
+    private String subtitle = null;
+
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -83,6 +86,7 @@ public class ArticleDetailFragment extends Fragment implements
         getLoaderManager().initLoader(0, null, this);
     }
 
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -91,6 +95,7 @@ public class ArticleDetailFragment extends Fragment implements
         toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
         getActivityCast().setSupportActionBar(toolbar);
         getActivityCast().getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getActivityCast().getSupportActionBar().setHomeButtonEnabled(true);
         mCollapsingToolbar =
                 (CollapsingToolbarLayout) mRootView.findViewById(R.id.collapsing_toolbar);
 
@@ -100,7 +105,7 @@ public class ArticleDetailFragment extends Fragment implements
             public void onClick(View view) {
                 startActivity(Intent.createChooser(ShareCompat.IntentBuilder.from(getActivity())
                         .setType("text/plain")
-                        .setText("Some sample text")
+                        .setText("Title: " + title + "On " + subtitle)
                         .getIntent(), getString(R.string.action_share)));
             }
         });
@@ -122,8 +127,9 @@ public class ArticleDetailFragment extends Fragment implements
             mRootView.setAlpha(0);
             mRootView.setVisibility(View.VISIBLE);
             mRootView.animate().alpha(1);
-            mCollapsingToolbar.setTitle(mCursor.getString(ArticleLoader.Query.TITLE));
-            String subtitle = String.format(
+            title = mCursor.getString(ArticleLoader.Query.TITLE);
+            mCollapsingToolbar.setTitle(title);
+            subtitle = String.format(
                     getString(R.string.subtitle),
                     DateUtils.getRelativeTimeSpanString(
                             mCursor.getLong(ArticleLoader.Query.PUBLISHED_DATE),
