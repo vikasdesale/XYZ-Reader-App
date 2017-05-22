@@ -8,9 +8,28 @@
     android:fitsSystemWindows="true"
     android:id="@+id/list_content"
     tools:context=".ui.ArticleListActivity">
-    <include
-        android:id="@+id/app_bar"
-        layout="@layout/app_bar" />
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:background="@color/primary"
+            app:elevation="4dp"
+            app:navigationIcon="@mipmap/ic_launcher"
+            app:popupTheme="@style/AppTheme.PopupOverlay">
+
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="?actionBarSize"
+                android:contentDescription="@string/app_name"
+                android:src="@drawable/logo" />
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
