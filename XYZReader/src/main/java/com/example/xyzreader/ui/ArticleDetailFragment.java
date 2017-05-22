@@ -41,7 +41,7 @@ public class ArticleDetailFragment extends Fragment implements
 
     private ImageView mPhotoView;
     private CollapsingToolbarLayout mCollapsingToolbar;
-
+    private Toolbar toolbar;
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
      * fragment (e.g. upon screen orientation changes).
@@ -87,13 +87,10 @@ public class ArticleDetailFragment extends Fragment implements
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         mRootView = inflater.inflate(R.layout.fragment_article_detail, container, false);
-
         mPhotoView = (ImageView) mRootView.findViewById(R.id.backdrop);
-
-        final Toolbar toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
+        toolbar = (Toolbar) mRootView.findViewById(R.id.toolbar);
         getActivityCast().setSupportActionBar(toolbar);
         getActivityCast().getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
         mCollapsingToolbar =
                 (CollapsingToolbarLayout) mRootView.findViewById(R.id.collapsing_toolbar);
 
