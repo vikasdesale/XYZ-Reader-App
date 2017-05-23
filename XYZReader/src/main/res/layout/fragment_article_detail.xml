@@ -44,7 +44,7 @@
         android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        app:layout_behavior="com.example.xyzreader.ui.FABAwareScrollingViewBehavior">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -90,6 +90,7 @@
         android:src="@drawable/ic_share"
         app:borderWidth="0dp"
         app:fabSize="normal"
-        app:pressedTranslationZ="@dimen/fab_press_translation_z" />
+        app:pressedTranslationZ="@dimen/fab_press_translation_z"
+       />
 
 </android.support.design.widget.CoordinatorLayout>
