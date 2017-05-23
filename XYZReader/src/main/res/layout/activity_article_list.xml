@@ -20,7 +20,9 @@
             android:background="@color/primary"
             app:elevation="4dp"
             app:navigationIcon="@mipmap/ic_launcher"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:layout_scrollFlags="scroll|enterAlways|snap" >
+
 
             <android.support.v7.widget.AppCompatImageView
                 android:layout_width="wrap_content"
