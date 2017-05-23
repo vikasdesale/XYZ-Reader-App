@@ -152,7 +152,7 @@ public class ArticleDetailFragment extends Fragment implements
                                     @Override
                                     public void onGenerated(Palette palette) {
                                         int defaultColor = getResources().getColor(android.R.color.black);
-                                        mCollapsingToolbar.setBackgroundColor(palette.getLightVibrantColor(defaultColor));
+                                        toolbar.setBackgroundColor(palette.getLightVibrantColor(defaultColor));
                                     }
                                 });
 
