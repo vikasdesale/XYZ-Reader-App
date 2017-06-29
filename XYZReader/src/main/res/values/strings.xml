@@ -10,5 +10,6 @@
     <string name="up">Up</string>
     <string name="ok">Ok</string>
     <string name="refresh">Refreshed</string>
+    <string name="fab_save">save article</string>
 
 </resources>
